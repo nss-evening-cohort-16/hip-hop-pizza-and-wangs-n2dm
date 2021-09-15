@@ -1,0 +1,43 @@
+
+{
+    "-Mjaou1v2jyQKvRnAUvw": {
+        "customerEmailAddress": "varchar",
+        "customerPhoneNumber": "text",
+        "firebaseKey": "-Mjaou1v2jyQKvRnAUvw",
+        "orderName": "string",
+        "orderStatus": "enum",
+        "orderType": "varchar"
+    },
+    "-Mjaou1wgZ2yTTfnN0P4": {
+        "customerEmailAddress": "varchar",
+        "customerPhoneNumber": "text",
+        "firebaseKey": "-Mjaou1wgZ2yTTfnN0P4",
+        "orderName": "string",
+        "orderStatus": "enum",
+        "orderType": "varchar"
+    },
+    "-Mjaou1yDHuIks_sNv1K": {
+        "customerEmailAddress": "varchar",
+        "customerPhoneNumber": "text",
+        "firebaseKey": "-Mjaou1yDHuIks_sNv1K",
+        "orderName": "string",
+        "orderStatus": "enum",
+        "orderType": "varchar"
+    },
+    "-Mjaou2-0JnhX936uLtL": {
+        "customerEmailAddress": "varchar",
+        "customerPhoneNumber": "text",
+        "firebaseKey": "-Mjaou2-0JnhX936uLtL",
+        "orderName": "string",
+        "orderStatus": "enum",
+        "orderType": "varchar"
+    },
+    "-Mjaou21GNo-vGZMLw4W": {
+        "customerEmailAddress": "varchar",
+        "customerPhoneNumber": "text",
+        "firebaseKey": "-Mjaou21GNo-vGZMLw4W",
+        "orderName": "string",
+        "orderStatus": "enum",
+        "orderType": "varchar"
+    }
+  }
