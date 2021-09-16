@@ -1,0 +1,27 @@
+{
+    "-Mjb6omeKkfNgE4rFQJR": {
+      "paymentId": 1,
+      "paymentType": "mastercard",
+      "tipAmount": 13
+    },
+    "-Mjb6omgNWfy13-ulHVj": {
+      "paymentId": 2,
+      "paymentType": "jcb",
+      "tipAmount": 90
+    },
+    "-Mjb6omh-iwB37KVw9wa": {
+      "paymentId": 3,
+      "paymentType": "solo",
+      "tipAmount": 88
+    },
+    "-Mjb6omiRoEhH5NxlSVi": {
+      "paymentId": 4,
+      "paymentType": "diners-club-us-ca",
+      "tipAmount": 9
+    },
+    "-Mjb6omjJZBZrnN_m5jU": {
+      "paymentId": 5,
+      "paymentType": "mastercard",
+      "tipAmount": 32
+    }
+  }
