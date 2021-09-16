@@ -6,7 +6,7 @@
         "firebaseKey": "-Mjaou1v2jyQKvRnAUvw",
         "orderName": "string",
         "orderStatus": "enum",
-        "orderType": "varchar"
+        "orderType": "phone"
     },
     "-Mjaou1wgZ2yTTfnN0P4": {
         "customerEmailAddress": "varchar",
