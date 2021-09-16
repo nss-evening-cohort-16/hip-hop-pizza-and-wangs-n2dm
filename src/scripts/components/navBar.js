@@ -1,24 +1,23 @@
 const navBar = () => {
   document.querySelector('#navbar-container').innerHTML = `
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-4">
-  <div class="container-fluid">
-    <a id="home" class="navbar-brand" href="#">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPMVICKR_0okc3trJoRsPjBBL8StkzXhYqxg&usqp=CAU" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      Vocab-YOU-lary
-    </a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <img id="home" class="nav-logo" src="https://github.com/nss-evening-cohort-16/hip-hop-pizza-and-wangs-java-souls/raw/Development/instructions/hhpw-record.png" alt="pizza-logo">
+    Hip Hop Pizza And Wangs
     <ul class="navbar-nav">
     <li class="nav-item">
       <a id="viewOrders" class="nav-link" href="#">View Orders</a>
     </li>
     <li class="nav-item">
-      <a id="ccreateOrder" class="nav-link" href="#">Create an Order</a>
+      <a id="createOrder" class="nav-link" href="#">Create an Order</a>
     </li>
-    </ul>
+    <div class = "search-logout">
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     </form>
     <div class="logout" id="logout-button"></div>
   </div>
+  </ul>
 </nav>
   `;
 };
