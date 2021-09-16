@@ -1,9 +1,9 @@
-import homeLoggedOut from '../components/homeLoggedOut';
+import signMeOut from '../components/buttons/logoutButton';
 
 // NAVIGATION EVENTS
 const navigationEvents = () => {
   // LOGOUT BUTTON
-  document.querySelector('#logout-button').addEventListener('click', homeLoggedOut);
+  document.querySelector('#logout-button').addEventListener('click', signMeOut);
 
   // HOME PAGE
   document.querySelector('#home').addEventListener('click', () => {
@@ -12,12 +12,12 @@ const navigationEvents = () => {
 
   // CREATE AN ORDER
   document.querySelector('#createOrder').addEventListener('click', () => {
-    console.warn.apply('Clicked-create-entry');
+    console.warn.apply('Clicked-create-order');
   });
 
   // CREATE AN ORDER
   document.querySelector('#viewOrders').addEventListener('click', () => {
-    console.warn.apply('Clicked-create-entry');
+    console.warn.apply('Clicked-view Order');
   });
   // VIEW REVENUE
   document.querySelector('#revenue').addEventListener('click', () => {
