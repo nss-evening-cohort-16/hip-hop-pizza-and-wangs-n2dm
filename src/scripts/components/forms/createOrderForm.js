@@ -5,8 +5,8 @@ const createOrderForm = (obj = { }) => {
   document.querySelector('#form-container').innerHTML = `
     <form id="order-form">
   <div class="mb-3">
-    <label for="orderName" class="form-label">Order Name</label>
-    <input type="text" class="form-control" id="orderName" value="${obj.orderName || ''}">
+    <label for="customerName" class="form-label">Customer Name</label>
+    <input type="text" class="form-control" id="customerName" value="${obj.customername || ''}">
   </div>
   <div class="mb-3">
     <label for="customerPhone" class="form-label">Customer Phone</label>
@@ -16,7 +16,7 @@ const createOrderForm = (obj = { }) => {
     <label for="customerEmail" class="form-label">Customer Email</label>
     <input type="text" class="form-control" id="customerEmail" value="${obj.customerEmailAddress || ''}">
   </div>
-  <select class="form-select" aria-label="Default select example" value="${obj.orderType || ''}">
+  <select class="form-select" aria-label="Default select example" value="${obj.ordertype || ''}">
     <option selected>Order Type</option>
     <option value="1">Phone</option>
     <option value="2">Walk-in</option>
