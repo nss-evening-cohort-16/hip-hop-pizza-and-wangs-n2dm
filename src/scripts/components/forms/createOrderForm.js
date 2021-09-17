@@ -1,13 +1,9 @@
 import clearDom from '../../helpers/clearDom';
 
-const createOrderForm = (obj = { }) => {
+const createOrderForm = (obj = {}) => {
   clearDom();
   document.querySelector('#form-container').innerHTML = `
     <form id="order-form">
-  <div class="mb-3">
-    <label for="orderName" class="form-label">Order Name</label>
-    <input type="text" class="form-control" id="orderName" value="${obj.orderName || ''}">
-  </div>
   <div class="mb-3">
     <label for="customerPhone" class="form-label">Customer Phone</label>
     <input type="text" class="form-control" id="customerPhone" value="${obj.customerPhoneNumber || ''}">
