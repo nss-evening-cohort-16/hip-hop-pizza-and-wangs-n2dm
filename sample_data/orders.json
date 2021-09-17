@@ -1,0 +1,52 @@
+
+{
+    "-Mjaou1v2jyQKvRnAUvw": {
+        "customeremail": "abc@gmail.com",
+        "customername": "Nissa John",
+        "customerphonenumber": "222-125-4569",
+        "firebaseKey": "-Mjaou1v2jyQKvRnAUvw",
+        "price": 20,
+        "ordertype": "phone",
+        "isopen": true   
+    },
+    
+    "-Mjaou1wgZ2yTTfnN0P4": {
+        "customeremail": "lbs@gmail.com",
+        "customername": "Nick Smith",
+        "customerphonenumber": "364-859-1246",
+        "firebaseKey": "-Mjaou1wgZ2yTTfnN0P4",
+        "price": 20,
+        "ordertype": "in-person",
+        "isopen": false
+    },
+
+    "-Mjaou1yDHuIks_sNv1K": {
+        "customeremail": "gmn@gmail.com",
+        "customername": "Adam Johnson",
+        "customerphonenumber": "364-153-1543",
+        "firebaseKey": "-Mjaou1yDHuIks_sNv1K",
+        "price": 25,
+        "ordertype": "phone",
+        "isopen": true
+    },
+
+    "-Mjaou2-0JnhX936uLtL": {
+        "customeremail": "lily@gmail.com",
+        "customername": "Lilian David",
+        "customerphonenumber": "124-456-4587",
+        "firebaseKey": "-Mjaou2-0JnhX936uLtL",
+        "price": 18,
+        "ordertype": "in-person",
+        "isopen": false
+    },
+
+    "-Mjaou21GNo-vGZMLw4W": {
+        "customeremail": "nix@gmail.com",
+        "customername": "Alicia Nix",
+        "customerphone": "741-789-7564",
+        "firebaseKey": "-Mjaou21GNo-vGZMLw4W",
+        "price": 18,
+        "ordertype": "in-person",
+        "isopen": false
+    }
+  }

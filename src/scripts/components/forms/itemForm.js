@@ -1,0 +1,21 @@
+import clearDom from '../../helpers/clearDom';
+
+const itemForm = () => {
+  clearDom();
+  document.querySelector('#form-container').innerHTML = `
+    <form id="add-item-form" class="mb-4">
+        <div class="form-group">
+          <label for="itemname">Item Name</label>
+          <input type="text" class="form-control" id="item-name" placeholder="Item Name" required>
+        </div>
+        <div class="form-group">
+          <label for="itemprice">Item Price</label>
+          <input type="text" class="form-control" id="item-price" placeholder="Item Price" required>
+        </div>
+        <div class="form-button">
+            <button id="submit-item-btn" class="btn btn-success">Add/Edit Item</button>
+        </div>
+      </form>`;
+};
+
+export default itemForm;
