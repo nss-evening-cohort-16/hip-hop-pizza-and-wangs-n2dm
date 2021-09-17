@@ -1,4 +1,5 @@
 import signMeOut from '../components/buttons/logoutButton';
+import createOrderForm from '../components/forms/createOrderForm';
 
 // NAVIGATION EVENTS
 const navigationEvents = () => {
@@ -7,11 +8,12 @@ const navigationEvents = () => {
 
   // HOME PAGE
   document.querySelector('#home').addEventListener('click', () => {
-    console.warn('Cliked!');
+    console.warn('Clicked!');
   });
 
   // CREATE AN ORDER
   document.querySelector('#createOrder').addEventListener('click', () => {
+    createOrderForm();
     console.warn.apply('Clicked-create-order');
   });
 

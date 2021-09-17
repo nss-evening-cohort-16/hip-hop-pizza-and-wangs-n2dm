@@ -1,6 +1,6 @@
 import clearDom from '../../helpers/clearDom';
 
-const createOrderForm = (userId, obj = {}) => {
+const createOrderForm = (obj = { }) => {
   clearDom();
   document.querySelector('#form-container').innerHTML = `<div class="mb-3">
   <label for="orderName" class="form-label">Order Name</label>
