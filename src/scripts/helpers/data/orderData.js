@@ -2,6 +2,7 @@ import axios from 'axios';
 import firebaseConfig from '../../../api/apiKeys';
 // API CALL FOR ORDERS
 const dbUrl = firebaseConfig.databaseURL;
+
 //  GET ORDERS
 const getOrders = () => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/orders.json`)

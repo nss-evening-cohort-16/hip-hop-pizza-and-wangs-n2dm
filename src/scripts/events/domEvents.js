@@ -2,8 +2,8 @@ import showOrders from '../components/orders';
 import getOrders from '../helpers/data/orderData';
 
 const domEvents = () => {
-  document.querySelector('#main-container').addEventListener('click', (e) => {
-    if (e.target.id.includes('viewOrders')) {
+  document.querySelector('#button-container').addEventListener('click', (e) => {
+    if (e.target.id.includes('viewOrder')) {
       getOrders().then(showOrders);
     }
   });

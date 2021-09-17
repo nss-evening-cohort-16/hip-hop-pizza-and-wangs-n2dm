@@ -9,11 +9,11 @@ const navigationEvents = () => {
 
   // HOMEPAGE
   document.querySelector('#home').addEventListener('click', clearDom);
-};
 
-// All Orders
-document.querySelector('#viewOrder').addEventListener('click', () => {
-  getOrders().then(showOrders);
-});
+  // All Orders
+  document.querySelector('#viewOrders').addEventListener('click', () => {
+    getOrders().then(showOrders);
+  });
+};
 
 export default navigationEvents;
