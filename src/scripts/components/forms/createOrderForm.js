@@ -10,11 +10,11 @@ const createOrderForm = (obj = { }) => {
   </div>
   <div class="mb-3">
     <label for="customerPhone" class="form-label">Customer Phone</label>
-    <input type="text" class="form-control" id="customerPhone" value="${obj.customerPhoneNumber || ''}">
+    <input type="text" class="form-control" id="customerPhone" value="${obj.customerphonenumber || ''}">
   </div>
   <div class="mb-3">
     <label for="customerEmail" class="form-label">Customer Email</label>
-    <input type="text" class="form-control" id="customerEmail" value="${obj.customerEmailAddress || ''}">
+    <input type="text" class="form-control" id="customerEmail" value="${obj.customeremail || ''}">
   </div>
   <select class="form-select" aria-label="Default select example" value="${obj.ordertype || ''}">
     <option selected>Order Type</option>
