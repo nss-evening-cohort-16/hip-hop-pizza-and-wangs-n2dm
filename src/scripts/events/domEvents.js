@@ -1,5 +1,6 @@
 import createOrderForm from '../components/forms/createOrderForm';
-// import showOrders from '../components/orders';
+import { deleteOrders } from '../helpers/data/orderData';
+import showOrders from '../components/orders';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -9,14 +10,15 @@ const domEvents = () => {
       createOrderForm();
     }
     // continuing
-    // if (e.target.id.includes()) {
-    //   if (window.confirm('Want to delete?')) {
-    //     const [, firebaseKey] = e.target.id.split('--');
-    //     console.warn('Clicked delete card');
+    if (e.target.id.includes('delete-order')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete this order?')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        console.warn('Clicked delete card');
 
-    //     deleteOrder(firebaseKey).then(showOrders);
-    //   }
-    // }
+        deleteOrders(firebaseKey).then(showOrders);
+      }
+    }
   });
 };
 
