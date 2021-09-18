@@ -15,7 +15,7 @@ const showOrders = (array) => {
                 <p class="card-text">Order Type: ${order.ordertype}</p>
                 <a href="#" class="card-link">Details</a>
                 <a href="#" class="card-link">Edit</a>
-                <a href="#" class="card-link">Delete</a>
+                <a href="#" class="card-link" id="delete-order">Delete</a>
             </div>
         </div>`;
   });
