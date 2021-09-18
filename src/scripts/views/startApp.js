@@ -11,6 +11,6 @@ const startApp = () => {
   navBar();
   navigationEvents();
   homeLoggedIn();
-//  getOrders().then(showOrders);
+// getOrders().then(showOrders);
 };
 export default startApp;
