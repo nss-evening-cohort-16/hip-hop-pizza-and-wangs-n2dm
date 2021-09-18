@@ -9,12 +9,12 @@ const domEvents = () => {
       console.warn('Clicked the Create Order Button on the Home Page');
       createOrderForm();
     }
-    // continuing
+    // DELETE ORDER
     if (e.target.id.includes('delete-order')) {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete this order?')) {
         const [, firebaseKey] = e.target.id.split('--');
-        console.warn('Clicked delete card');
+        console.warn('Clicked delete order');
 
         deleteOrders(firebaseKey).then(showOrders);
       }
