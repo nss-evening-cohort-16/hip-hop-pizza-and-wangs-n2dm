@@ -3,7 +3,7 @@ import clearDom from '../helpers/clearDom';
 const showOrders = (array) => {
   clearDom();
   array.forEach((order) => {
-    document.querySelector('#order-container').innerHTML += `
+    document.querySelector('#form-container').innerHTML += `
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <p class="card-text">Email: ${order.customeremail}</p>

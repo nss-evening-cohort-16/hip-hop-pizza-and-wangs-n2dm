@@ -1,7 +1,7 @@
 import createOrderForm from '../components/forms/createOrderForm';
 import clearDom from '../helpers/clearDom';
 import showOrders from '../components/orders';
-import getOrders from '../helpers/data/orderData';
+import { getOrders } from '../helpers/data/orderData';
 
 const navigationEvents = () => {
   // CREATE ORDER FORM EVENT
@@ -11,7 +11,7 @@ const navigationEvents = () => {
   document.querySelector('#home').addEventListener('click', clearDom);
 
   // All Orders
-  document.querySelector('#viewOrders').addEventListener('click', () => {
+  document.querySelector('#form-container').addEventListener('click', () => {
     getOrders().then(showOrders);
   });
 };
