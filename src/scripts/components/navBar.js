@@ -1,3 +1,5 @@
+import logoutButton from './buttons/logoutButton';
+
 const navBar = () => {
   document.querySelector('#navbar-container').innerHTML = `
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-4">
@@ -20,5 +22,6 @@ const navBar = () => {
   </ul>
 </nav>
   `;
+  logoutButton();
 };
 export default navBar;
