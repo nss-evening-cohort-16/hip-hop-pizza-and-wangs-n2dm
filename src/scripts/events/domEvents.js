@@ -1,10 +1,19 @@
-// import createOrderForm from '../components/forms/createOrderForm';
-// import { deleteOrders } from '../helpers/data/orderData';
-// import showOrders from '../components/orders';
+import createOrderForm from '../components/forms/createOrderForm';
+import showOrders from '../components/orders';
+import { getOrders } from '../helpers/data/orderData';
 
 const domEvents = () => {
-  document.querySelector('#main-container').addEventListener('click', (e) => {
-    // CLICK EVENT FOR CREATING AN ORDER FORM FROM HOME SCREEN
+  document.querySelector('#button-container').addEventListener('click', (e) => {
+    // CREATE ORDER
+    if (e.target.id.includes('create-btn')) {
+      console.warn('Here is the order form');
+      createOrderForm();
+    }
+    // VIEW ORDER
+    if (e.target.id.includes('view-btn')) {
+      console.warn('Here is the order card');
+      getOrders().then(showOrders);
+    }
   });
 };
 
