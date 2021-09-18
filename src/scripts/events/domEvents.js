@@ -1,6 +1,6 @@
 import createOrderForm from '../components/forms/createOrderForm';
-import { getOrders } from '../helpers/data/orderData';
 import showOrders from '../components/orders';
+import { getOrders } from '../helpers/data/orderData';
 
 const domEvents = () => {
   document.querySelector('#button-container').addEventListener('click', (e) => {
