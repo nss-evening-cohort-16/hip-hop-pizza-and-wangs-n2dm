@@ -9,4 +9,10 @@ const getOrders = () => new Promise((resolve, reject) => {
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
-export default getOrders;
+// GET A SINGLE ORDER CARD
+const getSingleOrderCard = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+export { getOrders, getSingleOrderCard };
