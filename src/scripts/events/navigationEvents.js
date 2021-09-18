@@ -11,7 +11,7 @@ const navigationEvents = () => {
   document.querySelector('#home').addEventListener('click', clearDom);
 
   // All Orders
-  document.querySelector('#form-container').addEventListener('click', () => {
+  document.querySelector('#viewOrders').addEventListener('click', () => {
     getOrders().then(showOrders);
   });
 };

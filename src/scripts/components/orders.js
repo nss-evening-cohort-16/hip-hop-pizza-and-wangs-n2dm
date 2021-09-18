@@ -8,7 +8,7 @@ const showOrders = (array) => {
     <button type="button" id="revenue-btn" class="btn btn-success"> View Revenue</button>
     `;
   array.forEach((order) => {
-    document.querySelector('#form-container').innerHTML += `
+    document.querySelector('#order-container').innerHTML += `
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <p class="card-text">Email: ${order.customeremail}</p>
