@@ -11,10 +11,11 @@ const getOrders = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const deleteOrders = (firebaseKey, userId) => new Promise((resolve, reject) => {
+// DELETE ORDER
+const deleteOrders = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/orders/${firebaseKey}.json`)
     .then(() => {
-      getOrders(userId).then(resolve);
+      getOrders().then(resolve);
     })
     .catch(reject);
 });
