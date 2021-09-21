@@ -18,7 +18,7 @@ const navBar = () => {
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     </form>
     </div>
-    <div class="logout" id="logout-button"></div>
+    <div class="logout" id="logout-button"></div>  
   </ul>
 </nav>
   `;
