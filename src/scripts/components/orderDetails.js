@@ -2,6 +2,10 @@ import clearDom from '../helpers/clearDom';
 
 const getOrderDetail = (array) => {
   clearDom();
+  document.querySelector('#detail-button').innerHTML = `
+  <button class="btn btn-success btn-lg mb-4" id="add-item-btn">Add Item</button>
+  <button class="btn btn-success btn-lg mb-4" id="go-to-payment-btn">Go To Payment</button>
+  `;
   array.forEach((item) => {
     document.querySelector('#order-container').innerHTML += `
         <div class="card item-card">
@@ -15,7 +19,5 @@ const getOrderDetail = (array) => {
         </div>
       </div>`;
   });
-  document.querySelector('#detail-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-item-btn">Add Item</button>';
-  document.querySelector('#detail-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="go-to-payment-btn">Go To Payment</button>';
 };
 export default getOrderDetail;
