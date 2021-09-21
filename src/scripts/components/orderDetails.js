@@ -3,7 +3,7 @@ import clearDom from '../helpers/clearDom';
 const getOrderDetail = (array) => {
   clearDom();
   array.forEach((item) => {
-    document.querySelector('#detail-container').innerHTML += `
+    document.querySelector('#order-container').innerHTML += `
         <div class="card item-card">
         <div class="card-body">
           <h3 class="card-item">${item.name}</h3>

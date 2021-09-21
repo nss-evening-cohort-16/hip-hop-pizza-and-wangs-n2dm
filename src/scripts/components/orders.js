@@ -1,3 +1,4 @@
+import detailEvent from '../events/eventDetails';
 import clearDom from '../helpers/clearDom';
 import homeLoggedIn from './homeLoggedIn';
 
@@ -13,12 +14,13 @@ const showOrders = (array) => {
                 <p class="card-text">Phone: ${order.customerphonenumber}</p>
                 <h5 class="card-subtitle mb-2 text-muted">OrderStatus: ${order.isopen}</h5>
                 <p class="card-text">Order Type: ${order.ordertype}</p>
-                <a href="#" class="card-link">Details</a>
+                <a id="order-detail--${order.firebaseKey}" href="#" class="card-link">Details</a>
                 <a href="#" class="card-link">Edit</a>
                 <a href="#" class="card-link" id="delete-order">Delete</a>
             </div>
         </div>`;
   });
+  detailEvent();
 };
 
 export default showOrders;
