@@ -17,8 +17,8 @@ const navBar = () => {
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     </form>
-    <div class="logout" id="logout-button"></div>
-  </div>
+    </div>
+    <div class="logout" id="logout-button"></div>  
   </ul>
 </nav>
   `;

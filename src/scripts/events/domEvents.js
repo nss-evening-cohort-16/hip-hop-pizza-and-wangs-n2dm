@@ -1,6 +1,7 @@
 import createOrderForm from '../components/forms/createOrderForm';
 import showOrders from '../components/orders';
 import { getOrders, deleteOrders } from '../helpers/data/orderData';
+import showRevenue from '../components/forms/addRevenueForm';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -24,6 +25,9 @@ const domEvents = () => {
 
         deleteOrders(id).then(showOrders);
       }
+    // VIEW REVENUE
+    if (e.target.id.includes('revenue-btn')) {
+      showRevenue();
     }
   });
 };
