@@ -16,10 +16,10 @@ const createOrderForm = (obj = {}) => {
     <label for="customerEmail" class="form-label">Customer Email</label>
     <input type="text" class="form-control" placeholder="customer email" id="customerEmail" value="${obj.customeremail || ''}">
   </div>
-  <select class="form-select" aria-label="Default select example" value="${obj.ordertype || ''}">
+  <select id="ordertype" class="form-select" aria-label="Default select example" value="${obj.ordertype || ''}">
     <option selected>Order Type</option>
-    <option value="1">phone</option>
-    <option value="2">in-person</option>
+    <option value="phone">phone</option>
+    <option value="in-person">in-person</option>
   </select>
   <button type="submit" id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}" class="btn btn-primary">Create/Edit Order</button>
 </form>

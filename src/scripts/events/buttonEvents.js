@@ -18,7 +18,9 @@ const buttonEvents = () => {
       const orderObj = {
         customername: document.querySelector('#orderName').value,
         customerphonenumber: document.querySelector('#customerPhone').value,
-        customeremail: document.querySelector('#customerEmail').value
+        customeremail: document.querySelector('#customerEmail').value,
+        ordertype: document.querySelector('#ordertype').value,
+        isopen: true
       };
 
       createOrder(orderObj).then(showOrders);
