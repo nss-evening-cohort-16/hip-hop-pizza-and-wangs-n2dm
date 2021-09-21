@@ -7,6 +7,7 @@ import domEvents from '../events/domEvents';
 const startApp = () => {
   console.warn('Hip-hop-Pizza!');
   domBuilder();
+  domEvents(); // This adds the Event Listerters to the DOM
   navBar();
   navigationEvents();
   domEvents();

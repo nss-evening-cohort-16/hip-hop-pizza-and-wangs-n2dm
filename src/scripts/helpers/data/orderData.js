@@ -26,8 +26,15 @@ const getSingleOrderCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const editOrder = (editObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/orders.json`, editObj)
+    .then(() => getOrders().then(resolve))
+    .catch(reject);
+});
+
 export {
   getOrders,
   deleteOrders,
-  getSingleOrderCard
+  getSingleOrderCard,
+  editOrder
 };
