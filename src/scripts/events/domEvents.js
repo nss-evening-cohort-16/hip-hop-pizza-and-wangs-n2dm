@@ -7,12 +7,12 @@ const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     // CREATE ORDER
     if (e.target.id.includes('create-btn')) {
-      console.warn('Here is the order form');
+      console.warn('This is Create Order');
       createOrderForm();
     }
     // VIEW ORDER
     if (e.target.id.includes('view-btn')) {
-      console.warn('Here is the order card');
+      console.warn('This is View Order');
       getOrders().then(showOrders);
     }
     // DELETE ORDER
