@@ -20,7 +20,8 @@ const buttonEvents = () => {
         customerphonenumber: document.querySelector('#customerPhone').value,
         customeremail: document.querySelector('#customerEmail').value,
         ordertype: document.querySelector('#ordertype').value,
-        isopen: true
+        isopen: true,
+        price: 10
       };
 
       createOrder(orderObj).then(showOrders);
