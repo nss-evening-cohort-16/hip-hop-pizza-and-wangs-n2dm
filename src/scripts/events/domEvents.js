@@ -39,4 +39,6 @@ const domEvents = () => {
   });
 };
 
+// VIEW ORDER DETAIL
+
 export default domEvents;

@@ -17,7 +17,7 @@ const createItem = (Obj) => new Promise((resolve, reject) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/items/${response.data.name}.json`, body)
         .then(() => {
-          getAllItems().then(resolve);
+          getAllItems(Obj.orderId).then((itemArray) => resolve(itemArray));
         });
     }).catch(reject);
 });
