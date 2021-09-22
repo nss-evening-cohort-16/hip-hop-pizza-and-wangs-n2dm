@@ -23,10 +23,10 @@ const createOrder = (orderObj) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const deleteOrders = (firebaseKey) => new Promise((resolve, reject) => {
+const deleteOrders = (firebaseKey, userId) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/orders/${firebaseKey}.json`)
     .then(() => {
-      getOrders().then(resolve);
+      getOrders(userId).then(resolve);
     })
     .catch(reject);
 });
@@ -38,16 +38,9 @@ const getSingleOrderCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const editOrder = (editObj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/orders${editObj.firebaseKey}.json`, editObj)
-    .then(() => getOrders(editObj).then(resolve))
-    .catch(reject);
-});
-
 export {
   getOrders,
   deleteOrders,
   getSingleOrderCard,
-  editOrder,
   createOrder
 };

@@ -26,13 +26,6 @@ const domEvents = () => {
         deleteOrders(id).then(showOrders);
       }
     }
-    // DELETE ITEM
-    // if (e.target.id.includes('item-delete-btn')) {
-    //   if (window.confirm('Delete Item?')) {
-
-    //   }
-    // }
-    // VIEW REVENUE
     if (e.target.id.includes('revenue-btn')) {
       showRevenue();
     }
