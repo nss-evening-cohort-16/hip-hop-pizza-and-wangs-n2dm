@@ -1,4 +1,4 @@
-import detailEvent from '../events/eventDetails';
+import detailEvent from '../events/detailEvents';
 import clearDom from '../helpers/clearDom';
 import homeLoggedIn from './homeLoggedIn';
 

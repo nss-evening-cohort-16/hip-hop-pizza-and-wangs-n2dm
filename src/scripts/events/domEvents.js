@@ -2,7 +2,7 @@ import createOrderForm from '../components/forms/createOrderForm';
 import showOrders from '../components/orders';
 // import viewOrderDetail from '../helpers/data/mergedData';
 import { getOrders } from '../helpers/data/orderData';
-// import getOrderDetail from '../components/orderDetails';
+import showRevenue from '../components/forms/addRevenueForm';
 
 const domEvents = () => {
   document.querySelector('#button-container').addEventListener('click', (e) => {
@@ -16,11 +16,10 @@ const domEvents = () => {
       console.warn('Here is the order card');
       getOrders().then(showOrders);
     }
-    // if (e.target.id.includes('order-detail')) {
-    //   console.warn('Here is the order detail');
-    //   const [, firebaseKey] = e.target.id.split('--');
-    //   viewOrderDetail(firebaseKey).then(getOrderDetail);
-    // }
+    // VIEW REVENUE
+    if (e.target.id.includes('revenue-btn')) {
+      showRevenue();
+    }
   });
 };
 

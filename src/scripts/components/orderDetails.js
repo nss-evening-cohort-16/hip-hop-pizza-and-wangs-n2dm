@@ -1,4 +1,5 @@
 import clearDom from '../helpers/clearDom';
+import orderTotal from './orderTotal';
 
 const getOrderDetail = (array) => {
   clearDom();
@@ -6,6 +7,8 @@ const getOrderDetail = (array) => {
   <button class="btn btn-success btn-lg mb-4" id="add-item-btn">Add Item</button>
   <button class="btn btn-success btn-lg mb-4" id="go-to-payment-btn">Go To Payment</button>
   `;
+  const orderCount = orderTotal(array);
+  document.querySelector('#order-container').innerHTML += `<h1> ${orderCount} order count </h1>`;
   array.forEach((item) => {
     document.querySelector('#order-container').innerHTML += `
         <div class="card item-card">
@@ -13,8 +16,9 @@ const getOrderDetail = (array) => {
           <h3 class="card-item">${item.name}</h3>
           <h3 class="card-price">PRICE: $${item.price}</h3>
           <div id="item-buttons">
-            <a href="#" id="item-edit-btn--${item.firebaseKey}"> Edit Item </a>
-            <a href="#" id="item-delete-btn--${item.firebaseKey}">Delete Item </a>
+            <a id="item-edit-btn--${item.firebaseKey}" href="#"> Edit Item </a>
+            <br>
+            <a id="item-delete-btn--${item.firebaseKey}" href="#"> Delete Item </a>
           </div>
         </div>
       </div>`;
