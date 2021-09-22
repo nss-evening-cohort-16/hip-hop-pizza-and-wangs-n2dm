@@ -1,5 +1,7 @@
 import createOrderForm from '../components/forms/createOrderForm';
 import showOrders from '../components/orders';
+// import viewOrderDetail from '../helpers/data/mergedData';
+
 import { getOrders } from '../helpers/data/orderData';
 import showRevenue from '../components/forms/addRevenueForm';
 
@@ -21,5 +23,7 @@ const domEvents = () => {
     }
   });
 };
+
+// VIEW ORDER DETAIL
 
 export default domEvents;
