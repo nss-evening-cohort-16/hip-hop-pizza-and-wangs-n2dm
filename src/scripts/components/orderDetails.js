@@ -3,10 +3,6 @@ import orderTotal from './orderTotal';
 
 const getOrderDetail = (array) => {
   clearDom();
-  document.querySelector('#detail-button').innerHTML = `
-  <button class="btn btn-success btn-lg mb-4" id="add-item-btn">Add Item</button>
-  <button class="btn btn-success btn-lg mb-4" id="go-to-payment-btn">Go To Payment</button>
-  `;
   const orderCount = orderTotal(array);
   document.querySelector('#order-container').innerHTML += `<h1> ${orderCount} order count </h1>`;
   array.forEach((item) => {
@@ -23,5 +19,9 @@ const getOrderDetail = (array) => {
         </div>
       </div>`;
   });
+  document.querySelector('#detail-button').innerHTML = `
+  <button class="btn btn-success btn-lg mb-4" id="add-item-btn">Add Item</button>
+  <button class="btn btn-success btn-lg mb-4" id="go-to-payment-btn">Go To Payment</button>
+  `;
 };
 export default getOrderDetail;
