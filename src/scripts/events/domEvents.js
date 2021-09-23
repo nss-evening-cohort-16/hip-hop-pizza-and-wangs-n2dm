@@ -2,6 +2,8 @@ import createOrderForm from '../components/forms/createOrderForm';
 import showOrders from '../components/orders';
 import { getOrders, deleteOrders } from '../helpers/data/orderData';
 import showRevenue from '../components/forms/addRevenueForm';
+import { deleteItem } from '../helpers/data/itemData';
+import getOrderDetail from '../components/orderDetails';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -27,11 +29,15 @@ const domEvents = () => {
       }
     }
     // DELETE ITEM
-    // if (e.target.id.includes('item-delete-btn')) {
-    //   if (window.confirm('Delete Item?')) {
+    if (e.target.id.includes('item-delete-btn')) {
+      if (window.confirm('Delete Item?')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        console.warn('this should go through');
 
-    //   }
-    // }
+        deleteItem(firebaseKey).then(getOrderDetail);
+      }
+    }
+
     // VIEW REVENUE
     if (e.target.id.includes('revenue-btn')) {
       showRevenue();
