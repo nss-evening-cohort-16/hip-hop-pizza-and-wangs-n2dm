@@ -2,6 +2,7 @@ import createOrderForm from '../components/forms/createOrderForm';
 import showOrders from '../components/orders';
 import { getOrders, deleteOrders } from '../helpers/data/orderData';
 import showRevenue from '../components/forms/addRevenueForm';
+import closeOrderForm from '../components/forms/closeOrderForm';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -25,6 +26,11 @@ const domEvents = () => {
 
         deleteOrders(id).then(showOrders);
       }
+    }
+    // GO TO PAYMENT
+    if (e.target.id.includes('go-to-payment-btn')) {
+      console.warn('Clicked Go To Payments');
+      closeOrderForm();
     }
     // DELETE ITEM
     // if (e.target.id.includes('item-delete-btn')) {
