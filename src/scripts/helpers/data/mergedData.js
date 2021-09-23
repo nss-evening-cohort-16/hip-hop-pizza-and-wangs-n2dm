@@ -1,5 +1,5 @@
 import { deleteItem, getOrderItems } from './itemData';
-import { getSingleOrderCard } from './orderData';
+import { deleteOrders, getSingleOrderCard } from './orderData';
 
 // GET ORDER DETAILS
 const viewOrderDetail = async (firebaseKey) => {
@@ -9,14 +9,14 @@ const viewOrderDetail = async (firebaseKey) => {
 };
 
 // DELETE ORDER ITEMS
-const deleteOrderItem = (orderId) => new Promise((resolve, reject) => {
+const deleteOrderItems = (orderId) => new Promise((resolve, reject) => {
   getOrderItems(orderId).then((orderItemsArray) => {
     const deleteItems = orderItemsArray.map((item) => deleteItem(item.firebaseKey));
 
     console.warn(deleteItem);
 
-    Promise.all([...deleteItems]).then(() => resolve(deleteSingleOrder))
-  })
+    Promise.all([...deleteItems]).then(() => resolve(deleteOrders(orderId)));
+  }).catch(reject);
 });
 
-export default viewOrderDetail;
+export { viewOrderDetail, deleteOrderItems };
