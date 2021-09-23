@@ -4,7 +4,7 @@ import orderTotal from './orderTotal';
 const getOrderDetail = (array) => {
   clearDom();
   const orderCount = orderTotal(array);
-  document.querySelector('#order-container').innerHTML += `<h1> ${orderCount} order count </h1>`;
+  document.querySelector('#order-container').innerHTML += `<h1> ${orderCount} Total </h1>`;
   array.forEach((item) => {
     document.querySelector('#order-container').innerHTML += `
         <div class="card item-card">

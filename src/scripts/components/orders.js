@@ -1,5 +1,5 @@
 import detailEvent from '../events/detailEvents';
-import editEvents from '../events/editEvent';
+// import editEvents from '../events/editEvent';
 import clearDom from '../helpers/clearDom';
 import homeLoggedIn from './homeLoggedIn';
 
@@ -22,7 +22,7 @@ const showOrders = (array) => {
         </div>`;
   });
   detailEvent();
-  editEvents();
+  // editEvents();
 };
 
 export default showOrders;
