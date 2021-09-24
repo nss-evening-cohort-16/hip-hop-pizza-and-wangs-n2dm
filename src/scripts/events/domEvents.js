@@ -1,7 +1,9 @@
 import createOrderForm from '../components/forms/createOrderForm';
 import showOrders from '../components/orders';
 import { getOrders, deleteOrders } from '../helpers/data/orderData';
+import getOrderDetail from '../components/orderDetails';
 import showRevenue from '../components/forms/addRevenueForm';
+import { deleteItem } from '../helpers/data/itemData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -22,19 +24,20 @@ const domEvents = () => {
         console.warn('clicked delete');
         const [, id] = e.target.id.split('--');
         console.warn('Clicked delete order', id);
+        console.warn(e.target.id.split('--'));
 
         deleteOrders(id).then(showOrders);
       }
     }
-    // DELETE ITEM
-    // if (e.target.id.includes('item-delete-btn')) {
-    //   if (window.confirm('Delete Item?')) {
-
-    //   }
-    // }
     // VIEW REVENUE
     if (e.target.id.includes('revenue-btn')) {
       showRevenue();
+    }
+    // DELETING ORDER ITEMS
+    if (e.target.id.includes('item-delete-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      console.warn('ON-CLICKED DELETE BOOK', e.target.id);
+      deleteItem(firebaseKey).then(getOrderDetail);
     }
   });
 };

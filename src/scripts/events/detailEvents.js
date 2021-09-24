@@ -1,5 +1,7 @@
+/* eslint-disable no-alert */
 import viewOrderDetail from '../helpers/data/mergedData';
 import getOrderDetail from '../components/orderDetails';
+/* import showOrders from '../components/orders'; */
 // import itemForm from '../components/forms/ItemForm';
 
 const detailEvent = () => {
