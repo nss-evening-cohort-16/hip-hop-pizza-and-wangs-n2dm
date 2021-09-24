@@ -19,4 +19,8 @@ const deleteOrderItems = (orderId) => new Promise((resolve, reject) => {
   }).catch(reject);
 });
 
-export { viewOrderDetail, deleteOrderItems };
+// export default viewOrderDetail;
+export {
+  viewOrderDetail,
+  deleteOrderItems
+};
