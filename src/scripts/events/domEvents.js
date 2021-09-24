@@ -1,9 +1,11 @@
 import createOrderForm from '../components/forms/createOrderForm';
 import showOrders from '../components/orders';
-import { getOrders, deleteOrders } from '../helpers/data/orderData';
+import { getOrders, deleteOrders, createOrder } from '../helpers/data/orderData';
 import showRevenue from '../components/forms/addRevenueForm';
-import { deleteItem } from '../helpers/data/itemData';
 import getOrderDetail from '../components/orderDetails';
+import { deleteItem, createItem } from '../helpers/data/itemData';
+import itemForm from '../components/forms/itemForm';
+import showItems from '../components/Item';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -30,6 +32,7 @@ const domEvents = () => {
     }
     // DELETE ITEM
     if (e.target.id.includes('item-delete-btn')) {
+      // eslint-disable-next-line no-alert
       if (window.confirm('Delete Item?')) {
         const [, firebaseKey] = e.target.id.split('--');
         console.warn('this should go through');
@@ -39,6 +42,37 @@ const domEvents = () => {
     }
 
     // VIEW REVENUE
+    // DOM EVENT FOR ADDING ORDER FROM SUBMIT BUTTON
+    if (e.target.id.includes('submit-order')) {
+      e.preventDefault();
+      const orderObj = {
+        customername: document.querySelector('#orderName').value,
+        customerphonenumber: document.querySelector('#customerPhone').value,
+        customeremail: document.querySelector('#customerEmail').value,
+        ordertype: document.querySelector('#ordertype').value,
+        isopen: true,
+        price: 10
+      };
+
+      createOrder(orderObj).then(showOrders);
+    }
+    /// ///////////////////////// ITEM EVENTS ///////////////////////////////////////////////////////
+
+    // DOM EVENT FOR ADDING AN ITEM
+    if (e.target.id.includes('add-item-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      itemForm(firebaseKey);
+    }
+    // Click EVENT FOR SUBMITTING NEW ITEM
+    if (e.target.id.includes('submit-item')) {
+      e.preventDefault();
+      // const [, orderId] = e.target.id.split('--');
+      const newItem = {
+        name: document.querySelector('#item-name').value,
+        price: Number(document.querySelector('#item-price').value),
+      };
+      createItem(newItem).then(showItems);
+    }
     if (e.target.id.includes('revenue-btn')) {
       showRevenue();
     }
