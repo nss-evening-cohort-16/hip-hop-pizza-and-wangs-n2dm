@@ -11,13 +11,13 @@ const getAllItems = (orderId) => new Promise((resolve, reject) => {
 });
 
 // CREATE AN ITEM
-const createItem = (Obj) => new Promise((resolve, reject) => {
-  axios.post(`${dbUrl}/items.json`, Obj)
+const createItem = (itemObj) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/items.json`, itemObj)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/items/${response.data.name}.json`, body)
         .then(() => {
-          getAllItems(Obj.orderId).then((itemArray) => resolve(itemArray));
+          getAllItems(itemObj.orderId).then((itemArray) => resolve(itemArray));
         });
     }).catch(reject);
 });

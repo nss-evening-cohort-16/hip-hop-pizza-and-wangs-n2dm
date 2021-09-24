@@ -10,11 +10,6 @@ const detailEvent = () => {
       console.warn(firebaseKey);
       viewOrderDetail(firebaseKey).then((object) => getOrderDetail(object.itemsObject));
     }
-    // SHOW ADD NEW ITEM FORM
-    // if (e.target.id.includes('item-edit-btn')) {
-    //   const [, firebaseKey] = e.target.id.split('--');
-    //   console.warn('item form');
-    //   itemForm(firebaseKey);
   });
 };
 
