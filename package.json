@@ -1,7 +1,7 @@
 {
-  "name": "webpack-5.0-template",
+  "name": "hip-hop-pizza-and-wangs-n2dm",
   "version": "1.0.0",
-  "description": "",
+  "description": "Dario-Messeret-Nathan-Nissa",
   "main": "src/scripts/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

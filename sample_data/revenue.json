@@ -1,0 +1,43 @@
+{
+	"-MjaugJQQIvr1wIWScAN": {
+	  "revenueid": 89,
+	  "totalOrderAmount": 69,
+	  "date": 1,
+	  "paymentType": 36,
+	  "tipAmount": "$5.40",
+	  "orderType": 1
+	},
+	"-MjaugJR8XpUVQeqSSwh": {
+	  "revenueid": 83,
+	  "totalOrderAmount": 89,
+	  "date": 2,
+	  "paymentType": 59,
+	  "tipAmount": "$1.88",
+	  "orderType": 2
+	},
+	"-MjaugJS-lzDc8lxVBq-": {
+	  "revenueid": 21,
+	  "totalOrderAmount": 6,
+	  "date": 3,
+	  "paymentType": 34,
+	  "tipAmount": "$2.63",
+	  "orderType": 3
+	},
+	"-MjaugJTzdWWSfx6jWZy": {
+	  "revenueid": 42,
+	  "totalOrderAmount": 92,
+	  "date": 4,
+	  "paymentType": 36,
+	  "tipAmount": "$7.59",
+	  "orderType": 4
+	},
+	"-MjaugJVI_wzI4KLoYff": {
+	  "revenueid": 36,
+	  "totalOrderAmount": 42,
+	  "date": 5,
+	  "paymentType": 71,
+	  "tipAmount": "$2.34",
+	  "orderType": 5
+	}
+  }
+  
