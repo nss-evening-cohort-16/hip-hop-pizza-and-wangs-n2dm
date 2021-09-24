@@ -6,6 +6,7 @@ import closeOrderForm from '../components/forms/closeOrderForm';
 import { createItem } from '../helpers/data/itemData';
 import itemForm from '../components/forms/itemForm';
 import showItems from '../components/Item';
+import homeLoggedIn from '../components/homeLoggedIn';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -36,8 +37,7 @@ const domEvents = () => {
       closeOrderForm();
     }
     // DELETE ITEM
-    // if (e.target.id.includes('item-delete-btn')) {
-    //   if (window.confirm('Delete Item?')) {
+
     // DOM EVENT FOR ADDING ORDER FROM SUBMIT BUTTON
     if (e.target.id.includes('submit-order')) {
       e.preventDefault();
@@ -52,7 +52,16 @@ const domEvents = () => {
 
       createOrder(orderObj).then(showOrders);
     }
+
+    // SUBMIT CLOSE ORDER FORM
+    if (e.target.id.includes('close-order-form')) {
+      console.warn('Thank you for your order!');
+      homeLoggedIn();
+    }
     /// ///////////////////////// ITEM EVENTS ///////////////////////////////////////////////////////
+
+    // if (e.target.id.includes('item-delete-btn')) {
+    //   if (window.confirm('Delete Item?')) {
 
     // DOM EVENT FOR ADDING AN ITEM
     if (e.target.id.includes('add-item-btn')) {

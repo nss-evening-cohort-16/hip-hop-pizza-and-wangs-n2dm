@@ -4,7 +4,7 @@ import homeLoggedIn from '../homeLoggedIn';
 const closeOrderForm = (obj = {}) => {
   clearDom();
   homeLoggedIn();
-  document.querySelector('#main-container').innerHTML = `
+  document.querySelector('#form-container').innerHTML = `
   <form>
       <select class="form-select" aria-label="Default select example" value="${obj.paymentType || ''}">
         <option selected>Payment Type</option>
@@ -14,9 +14,9 @@ const closeOrderForm = (obj = {}) => {
       </select>
       <div class="mb-3">
         <label for="tipAmount" class="form-label">Tip Amount</label>
-        <input type="text" class="form-control" id="tipAmount" placeholder="Enter Tip" value="${obj.tipAmount}">
+        <input type="text" class="form-control" id="tipAmount" placeholder="Add Tip" value="${obj.tipAmount || ''}">
       </div>
-      <button type="submit" id="${obj.firebaseKey}" class="btn btn-primary">Close Order</button>
+      <button type="submit" id="close-order-form--${obj.firebaseKey}" class="btn btn-primary">Close Order</button>
   </form>`;
 };
 

@@ -1,7 +1,9 @@
 import clearDom from '../../helpers/clearDom';
+import homeLoggedIn from '../homeLoggedIn';
 
 const showRevenue = () => {
   clearDom();
+  homeLoggedIn();
   document.querySelector('#form-container').innerHTML = `
   <div class="card" style="width: 18rem;">
   <div class="card-body">
