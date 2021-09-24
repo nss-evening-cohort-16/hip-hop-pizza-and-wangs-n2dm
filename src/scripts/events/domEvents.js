@@ -3,7 +3,8 @@ import showOrders from '../components/orders';
 import { getOrders, deleteOrders, createOrder } from '../helpers/data/orderData';
 import showRevenue from '../components/forms/addRevenueForm';
 import closeOrderForm from '../components/forms/closeOrderForm';
-import { createItem } from '../helpers/data/itemData';
+import getOrderDetail from '../components/orderDetails';
+import { deleteItem, createItem } from '../helpers/data/itemData';
 import itemForm from '../components/forms/itemForm';
 import showItems from '../components/Item';
 import homeLoggedIn from '../components/homeLoggedIn';
@@ -36,8 +37,19 @@ const domEvents = () => {
       console.warn('Clicked Go To Payments');
       closeOrderForm();
     }
-    // DELETE ITEM
 
+    // DELETE ITEM
+    if (e.target.id.includes('item-delete-btn')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Delete Item?')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        console.warn('this should go through');
+
+        deleteItem(firebaseKey).then(getOrderDetail);
+      }
+    }
+
+    // VIEW REVENUE
     // DOM EVENT FOR ADDING ORDER FROM SUBMIT BUTTON
     if (e.target.id.includes('submit-order')) {
       e.preventDefault();
