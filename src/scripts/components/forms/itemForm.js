@@ -1,6 +1,6 @@
 import clearDom from '../../helpers/clearDom';
 
-const itemForm = (orderId, obj = {}) => {
+const itemForm = (obj = {}, orderId) => {
   clearDom();
   document.querySelector('#form-container').innerHTML = `
     <form id="add-item-form" class="mb-4">
