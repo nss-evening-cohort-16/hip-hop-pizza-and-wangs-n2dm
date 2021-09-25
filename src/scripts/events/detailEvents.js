@@ -1,4 +1,4 @@
-import viewOrderDetail from '../helpers/data/mergedData';
+import { viewOrderDetail } from '../helpers/data/mergedData';
 import getOrderDetail from '../components/orderDetails';
 
 const detailEvent = () => {
