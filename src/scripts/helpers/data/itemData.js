@@ -46,9 +46,9 @@ const getSingleItem = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // UPDATE ITEM
-const updateItem = (Obj) => new Promise((resolve, reject) => {
+const updateItem = (orderId, Obj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/items/${Obj.firebaseKey}.json`, Obj)
-    .then(() => getAllItems(Obj).then(resolve))
+    .then(() => getAllItems(orderId).then(resolve))
     .catch(reject);
 });
 

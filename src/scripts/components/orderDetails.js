@@ -6,6 +6,7 @@ const getOrderDetail = (array) => {
   const orderCount = orderTotal(array);
   document.querySelector('#order-container').innerHTML += `<h1>TOTAL: ${orderCount}</h1>`;
   array.forEach((item) => {
+    console.warn(item);
     document.querySelector('#order-container').innerHTML += `
         <div class="card item-card">
         <div class="card-body">
