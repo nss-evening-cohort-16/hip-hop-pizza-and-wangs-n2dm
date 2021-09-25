@@ -29,6 +29,15 @@ const getOrderItems = (orderId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// DELETE ORDER ITEM
+const deleteItem = (firebaseKey, userId) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/items/${firebaseKey}.json`)
+    .then(() => {
+      getOrderItems(userId).then(resolve);
+    })
+    .catch(reject);
+});
+
 // GET SINGLE ITEM
 const getSingleItem = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/items/${firebaseKey}.json`)
@@ -37,5 +46,5 @@ const getSingleItem = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 export {
-  getAllItems, createItem, getOrderItems, getSingleItem
+  getAllItems, createItem, getOrderItems, getSingleItem, deleteItem
 };

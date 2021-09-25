@@ -2,9 +2,12 @@ import createOrderForm from '../components/forms/createOrderForm';
 import showOrders from '../components/orders';
 import { getOrders, deleteOrders, createOrder } from '../helpers/data/orderData';
 import showRevenue from '../components/forms/addRevenueForm';
-import { createItem } from '../helpers/data/itemData';
+import closeOrderForm from '../components/forms/closeOrderForm';
+import getOrderDetail from '../components/orderDetails';
+import { deleteItem, createItem } from '../helpers/data/itemData';
 import itemForm from '../components/forms/itemForm';
 import showItems from '../components/Item';
+import homeLoggedIn from '../components/homeLoggedIn';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -29,6 +32,24 @@ const domEvents = () => {
         deleteOrders(id).then(showOrders);
       }
     }
+    // GO TO PAYMENT
+    if (e.target.id.includes('go-to-payment-btn')) {
+      console.warn('Clicked Go To Payments');
+      closeOrderForm();
+    }
+
+    // DELETE ITEM
+    if (e.target.id.includes('item-delete-btn')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Delete Item?')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        console.warn('this should go through');
+
+        deleteItem(firebaseKey).then(getOrderDetail);
+      }
+    }
+
+    // VIEW REVENUE
     // DOM EVENT FOR ADDING ORDER FROM SUBMIT BUTTON
     if (e.target.id.includes('submit-order')) {
       e.preventDefault();
@@ -43,7 +64,16 @@ const domEvents = () => {
 
       createOrder(orderObj).then(showOrders);
     }
+
+    // SUBMIT CLOSE ORDER FORM
+    if (e.target.id.includes('close-order-form')) {
+      console.warn('Thank you for your order!');
+      homeLoggedIn();
+    }
     /// ///////////////////////// ITEM EVENTS ///////////////////////////////////////////////////////
+
+    // if (e.target.id.includes('item-delete-btn')) {
+    //   if (window.confirm('Delete Item?')) {
 
     // DOM EVENT FOR ADDING AN ITEM
     if (e.target.id.includes('add-item-btn')) {

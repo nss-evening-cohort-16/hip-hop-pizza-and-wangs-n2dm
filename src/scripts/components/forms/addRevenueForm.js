@@ -1,7 +1,9 @@
+import navigationEvents from '../../events/navigationEvents';
 import clearDom from '../../helpers/clearDom';
 
 const showRevenue = () => {
   clearDom();
+  navigationEvents();
   document.querySelector('#form-container').innerHTML = `
   <div class="card" style="width: 18rem;">
   <div class="card-body">

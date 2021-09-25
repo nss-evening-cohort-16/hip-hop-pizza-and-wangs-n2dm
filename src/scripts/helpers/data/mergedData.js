@@ -1,5 +1,5 @@
-import { getOrderItems } from './itemData';
-import { getSingleOrderCard } from './orderData';
+import { deleteItem, getOrderItems } from './itemData';
+import { deleteOrders, getSingleOrderCard } from './orderData';
 
 // GET ORDER DETAILS
 const viewOrderDetail = async (firebaseKey) => {
@@ -8,4 +8,19 @@ const viewOrderDetail = async (firebaseKey) => {
   return ({ itemsObject, ...orderObject });
 };
 
-export default viewOrderDetail;
+// DELETE ORDER ITEMS
+const deleteOrderItems = (orderId) => new Promise((resolve, reject) => {
+  getOrderItems(orderId).then((orderItemsArray) => {
+    const deleteItems = orderItemsArray.map((item) => deleteItem(item.firebaseKey));
+
+    // console.warn(deleteItem);
+
+    Promise.all([...deleteItems]).then(() => resolve(deleteOrders(orderId)));
+  }).catch(reject);
+});
+
+// export default viewOrderDetail;
+export {
+  viewOrderDetail,
+  deleteOrderItems
+};
