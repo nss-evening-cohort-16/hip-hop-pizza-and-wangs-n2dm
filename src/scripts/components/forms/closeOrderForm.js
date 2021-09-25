@@ -1,9 +1,9 @@
+import navigationEvents from '../../events/navigationEvents';
 import clearDom from '../../helpers/clearDom';
-import homeLoggedIn from '../homeLoggedIn';
 
 const closeOrderForm = (obj = {}) => {
   clearDom();
-  homeLoggedIn();
+  navigationEvents();
   document.querySelector('#form-container').innerHTML = `
   <form>
       <select class="form-select" aria-label="Default select example" value="${obj.paymentType || ''}">
