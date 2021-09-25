@@ -12,6 +12,7 @@ import { deleteItem, createItem } from '../helpers/data/itemData';
 import itemForm from '../components/forms/itemForm';
 import showItems from '../components/Item';
 import homeLoggedIn from '../components/homeLoggedIn';
+import { deleteItem, createItem } from '../helpers/data/itemData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
