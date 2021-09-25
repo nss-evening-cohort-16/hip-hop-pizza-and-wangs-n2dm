@@ -5,6 +5,7 @@ const showItems = (array) => {
   clearDom();
   homeLoggedIn();
   array.forEach((item) => {
+    console.warn(item);
     document.querySelector('#order-container').innerHTML += `
     <div class="card item-card">
     <div class="card-body">

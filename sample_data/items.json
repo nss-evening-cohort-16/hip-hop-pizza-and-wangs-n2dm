@@ -2,27 +2,33 @@
     "-Mjm6GO3hE_YCnTphryw": {
       "name": "Cheese Pizza",
       "price": 10,
-      "orderId": "-Mjaou1v2jyQKvRnAUvw"
+      "orderId": "-Mjaou1v2jyQKvRnAUvw",
+      "firebaseKey" : "Mjm6GO3hE_YCnTphryw"
     },
     "-Mjm6GO48ZrBEyxC8Nr9": {
       "name": "Wings",
       "price": 10,
-      "orderId": "-Mjaou1wgZ2yTTfnN0P4"
+      "orderId": "-Mjaou1wgZ2yTTfnN0P4",
+      "firebaseKey" : "-Mjm6GO48ZrBEyxC8Nr9"
     
     },
     "-Mjm6GO5yVzCs8GNZDYT": {
       "name": "Pepperoni Pizza",
       "price": 5,
-      "orderId": "-Mjaou1yDHuIks_sNv1K"
+      "orderId": "-Mjaou1yDHuIks_sNv1K",
+      "firebaseKey" : "-Mjm6GO5yVzCs8GNZDYT"
     },
+
     "-Mjm6GO5yVzCs8GNZDYU": {
       "name": "Extra Cheese",
       "price": 10,
-      "orderId": "-Mjaou2-0JnhX936uLtL"
+      "orderId": "-Mjaou2-0JnhX936uLtL",
+      "firebaseKey" : "-Mjm6GO5yVzCs8GNZDYU"
     },
     "-Mjm6GO6Po4zipfsDGlQ": {
       "name": "Cheese Stick",
       "price": 5,
-      "orderId": "-Mjaou21GNo-vGZMLw4W"
+      "orderId": "-Mjaou21GNo-vGZMLw4W",
+      "firebaseKey" : "Mjm6GO6Po4zipfsDGlQ"
     }
   }

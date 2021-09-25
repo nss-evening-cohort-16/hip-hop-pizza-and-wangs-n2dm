@@ -2,11 +2,14 @@ import createOrderForm from '../components/forms/createOrderForm';
 import showOrders from '../components/orders';
 import { getOrders, deleteOrders, createOrder } from '../helpers/data/orderData';
 import showRevenue from '../components/forms/addRevenueForm';
-import closeOrderForm from '../components/forms/closeOrderForm';
-import getOrderDetail from '../components/orderDetails';
-import { deleteItem, createItem } from '../helpers/data/itemData';
+import {
+  createItem, getSingleItem, updateItem, deleteItem
+} from '../helpers/data/itemData';
 import itemForm from '../components/forms/itemForm';
 import showItems from '../components/Item';
+// import viewOrderDetail from '../helpers/data/mergedData';
+import getOrderDetail from '../components/orderDetails';
+import closeOrderForm from '../components/forms/closeOrderForm';
 import homeLoggedIn from '../components/homeLoggedIn';
 
 const domEvents = () => {
@@ -92,6 +95,25 @@ const domEvents = () => {
     }
     if (e.target.id.includes('revenue-btn')) {
       showRevenue();
+    }
+    // DOM EVENTS FOR ITEMS
+    // EDIT AN ITEM
+    if (e.target.id.includes('item-edit-btn')) {
+      const [, id] = e.target.id.split('--');
+      getSingleItem(id).then((obj) => itemForm(obj));
+    }
+    // CLICK EVENT FOR UPDATING AN ITEM
+    if (e.target.id.includes('update-item-btn')) {
+      e.preventDefault();
+      const [, firebaseKey, orderId] = e.target.id.split('--');
+      const itemObj = {
+        name: document.querySelector('#item-name').value,
+        price: document.querySelector('#item-price').value,
+        orderId,
+        firebaseKey
+      };
+      updateItem(orderId, itemObj).then(showItems);
+      // getSingleItem(firebaseKey).then((item) => viewOrderDetail(item.orderId).then(getOrderDetail));
     }
   });
 };
