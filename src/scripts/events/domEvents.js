@@ -7,6 +7,11 @@ import itemForm from '../components/forms/itemForm';
 import showItems from '../components/Item';
 import viewOrderDetail from '../helpers/data/mergedData';
 import getOrderDetail from '../components/orderDetails';
+import closeOrderForm from '../components/forms/closeOrderForm';
+import { deleteItem, createItem } from '../helpers/data/itemData';
+import itemForm from '../components/forms/itemForm';
+import showItems from '../components/Item';
+import homeLoggedIn from '../components/homeLoggedIn';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -31,6 +36,24 @@ const domEvents = () => {
         deleteOrders(id).then(showOrders);
       }
     }
+    // GO TO PAYMENT
+    if (e.target.id.includes('go-to-payment-btn')) {
+      console.warn('Clicked Go To Payments');
+      closeOrderForm();
+    }
+
+    // DELETE ITEM
+    if (e.target.id.includes('item-delete-btn')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Delete Item?')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        console.warn('this should go through');
+
+        deleteItem(firebaseKey).then(getOrderDetail);
+      }
+    }
+
+    // VIEW REVENUE
     // DOM EVENT FOR ADDING ORDER FROM SUBMIT BUTTON
     if (e.target.id.includes('submit-order')) {
       e.preventDefault();
@@ -45,7 +68,16 @@ const domEvents = () => {
 
       createOrder(orderObj).then(showOrders);
     }
+
+    // SUBMIT CLOSE ORDER FORM
+    if (e.target.id.includes('close-order-form')) {
+      console.warn('Thank you for your order!');
+      homeLoggedIn();
+    }
     /// ///////////////////////// ITEM EVENTS ///////////////////////////////////////////////////////
+
+    // if (e.target.id.includes('item-delete-btn')) {
+    //   if (window.confirm('Delete Item?')) {
 
     // DOM EVENT FOR ADDING AN ITEM
     if (e.target.id.includes('add-item-btn')) {
@@ -68,20 +100,21 @@ const domEvents = () => {
     // DOM EVENTS FOR ITEMS
     // EDIT AN ITEM
     if (e.target.id.includes('item-edit-btn')) {
-      const [, id] = e.target.id.split('--');
-      getSingleItem(id).then((obj) => itemForm(obj));
+      const [, id, orderKey] = e.target.id.split('--');
+      getSingleItem(id).then((obj) => itemForm(orderKey, obj));
     }
     // CLICK EVENT FOR UPDATING AN ITEM
     if (e.target.id.includes('update-item-btn')) {
       e.preventDefault();
-      const [, firebaseKey] = e.target.id.split('--');
+      const [, firebaseKey, orderId] = e.target.id.split('--');
       const itemObj = {
         name: document.querySelector('#item-name').value,
         price: document.querySelector('#item-price').value,
+        orderId,
         firebaseKey
       };
-      updateItem(itemObj);
-      getSingleItem(firebaseKey).then((item) => viewOrderDetail(item.orderId).then(getOrderDetail));
+      updateItem(itemObj, orderId).then((array) => showItems(orderId, array));
+      // getSingleItem(firebaseKey).then((item) => viewOrderDetail(item.orderId).then(getOrderDetail));
     }
   });
 };
