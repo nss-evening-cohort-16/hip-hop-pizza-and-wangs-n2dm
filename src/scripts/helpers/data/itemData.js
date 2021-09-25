@@ -4,8 +4,8 @@ import firebaseConfig from '../../../api/apiKeys';
 const dbUrl = firebaseConfig.databaseURL;
 
 // GET ALL ITEMS
-const getAllItems = (orderId) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/items.json?orderBy="orderId"&equalTo="${orderId}"`)
+const getAllItems = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/items.json?orderBy="orderId"&equalTo="${firebaseKey}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch(reject);
 });

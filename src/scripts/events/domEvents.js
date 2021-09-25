@@ -68,8 +68,8 @@ const domEvents = () => {
     // DOM EVENTS FOR ITEMS
     // EDIT AN ITEM
     if (e.target.id.includes('item-edit-btn')) {
-      const [, orderId, firebaseKey] = e.target.id.split('--');
-      getSingleItem(firebaseKey).then((obj) => itemForm(orderId, obj));
+      const [, id] = e.target.id.split('--');
+      getSingleItem(id).then((obj) => itemForm(obj));
     }
     // CLICK EVENT FOR UPDATING AN ITEM
     if (e.target.id.includes('update-item-btn')) {
